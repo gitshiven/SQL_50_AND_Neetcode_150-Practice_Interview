@@ -8,9 +8,3 @@ class Solution:
                 result[popped_value] = (i - popped_value)
             stack.append(i)
         return result
-
-
-
-            
-            
-
