@@ -4,7 +4,7 @@ class Solution:
         n = len(matrix[0])
 
         l,r = 0, (m*n)-1
-        if not matrix:
+        if not matrix and matrix[0]:
             return False
         while l<=r:
             mid = l + ((r-l)//2)
