@@ -1,15 +1,13 @@
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-        min_price = prices[0]
+        l, r = 0, 1
         max_profit = 0
+        while r<len(prices):    #sliding window core ek pointer se scan karo puri list
 
-        for i in range(1, len(prices)):
-            if prices[i] < min_price:
-                min_price = prices[i]
-            
-            profit = prices[i] - min_price
-            max_profit = max(max_profit, profit)
+            if prices[r] > prices[l]:
+                profit= prices[r] - prices[l]
+                max_profit = max(profit, max_profit)
+            else:
+                l = r
+            r+=1
         return max_profit
-
-
-# O(n)
